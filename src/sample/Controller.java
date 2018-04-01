@@ -1,24 +1,27 @@
 package sample;
 
 import gnu.io.*;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
+import javafx.util.Duration;
 
 public class Controller {
 
+    private Timeline timer;
     private SerialPort serialPort = null;
     @FXML
     private ChoiceBox choiceBoxPort;
+    @FXML
+    private CheckBox checkBoxTime;
     @FXML
     private ChoiceBox<Integer> choiceBoxBT;
     //    @FXML
 //    private Button buttonOpen;
     @FXML
-    private Label label;
+    private TextField textFieldTime;
     @FXML
     private TextArea textAreaInput;
     @FXML
@@ -50,12 +53,27 @@ public class Controller {
     private void buttonSendHandle(){
         SerialPortMange.sendData(serialPort,textAreaOutput.getText());
     }
+    @FXML
+    private void checkBoxTimeHandle(){
+        if(checkBoxTime.isSelected()){
+            timer.setDelay(Duration.millis(Integer.parseInt(textFieldTime.getText())));
+            timer.play();
+        }else {
+            timer.stop();
+        }
+    }
+
 
     @FXML
     private void initialize() {
         choiceBoxPort.setItems(FXCollections.observableArrayList(SerialPortMange.findPort()));
         choiceBoxBT.setItems(FXCollections.observableArrayList(1200, 2400, 4800, 9600, 14400, 19200));
         choiceBoxBT.setValue(9600);
+        timer=new Timeline(new KeyFrame(Duration.millis(1500), e-> SerialPortMange.sendData(serialPort,textAreaOutput.getText())
+                //System.out.println("hfg"+textAreaOutput.getText())
+        ));
+        timer.setCycleCount(Timeline.INDEFINITE);
+
         //test
         //System.out.println("init");
     }
