@@ -28,8 +28,8 @@
     <children>
         <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="598.0" prefWidth="695.0" VBox.vgrow="ALWAYS">
             <children>
-                <TextArea fx:id="textAreaInput" editable="false" layoutX="231.0" layoutY="14.0" prefHeight="271.0" prefWidth="387.0" />
-                <TextArea fx:id="textAreaOutput" layoutX="232.0" layoutY="302.0" prefHeight="125.0" prefWidth="387.0" />
+                <TextArea fx:id="textAreaInput" editable="false" layoutX="231.0" layoutY="14.0" prefHeight="337.0" prefWidth="387.0" />
+                <TextArea fx:id="textAreaOutput" layoutX="232.0" layoutY="371.0" prefHeight="125.0" prefWidth="387.0" />
                 <GridPane layoutX="14.0" layoutY="24.0" style="-fx-border-color: #619d6f;" vgap="5.0">
                     <children>
                         <Label text="端口" />
@@ -91,8 +91,8 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </GridPane>
-                <Button layoutX="546.0" layoutY="499.0" mnemonicParsing="false" onAction="#buttonSendHandle" text="发送" />
-                <HBox layoutX="253.0" layoutY="498.0" prefHeight="32.0" prefWidth="214.0" spacing="10.0">
+                <Button layoutX="546.0" layoutY="518.0" mnemonicParsing="false" onAction="#buttonSendHandle" text="发送" />
+                <HBox layoutX="253.0" layoutY="518.0" prefHeight="32.0" prefWidth="214.0" spacing="10.0">
                     <children>
                         <Button fx:id="buttonOpen" mnemonicParsing="false" onAction="#buttonOpenHandle" text="打开端口" />
                         <Button mnemonicParsing="false" onAction="#buttonCloseHandle" text="关闭端口" />

@@ -84,7 +84,7 @@
                </rowConstraints>
                <children>
                   <TextField fx:id="textFieldTime" prefHeight="30.0" prefWidth="148.0" GridPane.columnIndex="1" />
-                        <CheckBox fx:id="checkBoxTime" alignment="CENTER" mnemonicParsing="false" onAction="#checkBoxTimeHandle" prefHeight="39.0" prefWidth="112.0" text="自动发送" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                        <CheckBox fx:id="checkBoxTime" mnemonicParsing="false" onAction="#checkBoxTimeHandle" prefHeight="39.0" prefWidth="112.0" text="自动发送" GridPane.columnSpan="2" GridPane.rowIndex="1" />
                   <Label text="Label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                </children>
                <padding>
